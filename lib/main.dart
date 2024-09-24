@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:spacing_generator_tutorial/bad_card.dart';
+import 'package:spacing_generator_tutorial/good_card.dart';
 
 void main() {
   runApp(const MainApp());
@@ -9,10 +11,19 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
+        appBar: AppBar(
+          title: const Text('Consistent Spacing'),
+        ),
+        body: const SafeArea(
+          child: Column(
+            children: [
+              BadCard(),
+              GoodCard(),
+            ],
+          ),
         ),
       ),
     );
